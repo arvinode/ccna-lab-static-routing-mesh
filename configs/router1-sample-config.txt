@@ -1,0 +1,52 @@
+! ============================================
+! Sample Router Configuration - Router1
+! Full mesh static routing lab
+! ============================================
+
+enable
+configure terminal
+
+! --- LAN interface (connects to switch/PCs) ---
+interface g0/0
+ ip address 11.0.0.1 255.0.0.0
+ no shutdown
+ exit
+
+! --- Serial links to other mesh routers ---
+interface s0/1/0
+ ip address 10.0.0.1 255.0.0.0
+ no shutdown
+ exit
+
+interface s0/0/0
+ ip address 60.0.0.1 255.0.0.0
+ no shutdown
+ exit
+
+interface s0/0/1
+ ip address 70.0.0.1 255.0.0.0
+ no shutdown
+ exit
+
+interface s0/1/1
+ ip address 50.0.0.2 255.0.0.0
+ no shutdown
+ exit
+
+! --- Static routes to remote networks ---
+ip route 12.0.0.0 255.0.0.0 10.0.0.2
+ip route 13.0.0.0 255.0.0.0 10.0.0.2
+ip route 14.0.0.0 255.0.0.0 60.0.0.2
+ip route 15.0.0.0 255.0.0.0 70.0.0.1
+ip route 16.0.0.0 255.0.0.0 50.0.0.1
+ip route 20.0.0.0 255.0.0.0 10.0.0.2
+ip route 80.0.0.0 255.0.0.0 10.0.0.2
+ip route 100.0.0.0 255.0.0.0 10.0.0.2
+ip route 90.0.0.0 255.0.0.0 50.0.0.1
+ip route 30.0.0.0 255.0.0.0 60.0.0.2
+ip route 40.0.0.0 255.0.0.0 70.0.0.1
+
+exit
+
+! --- Save configuration ---
+write memory
