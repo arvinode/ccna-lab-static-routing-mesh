@@ -18,10 +18,6 @@ ip route <destination> <mask> <next-hop>
 |---|---|
 | `show ip route` | The routing table — connected, local, and static routes |
 | `show ip interface brief` | All interfaces, their IPs, and up/down status |
-| `show running-config` | The current active configuration |
-| `show startup-config` | The saved configuration (loaded on reboot) |
-| `show ip protocols` | Any dynamic routing protocols running (none, in this lab) |
-| `show history` | Recently typed commands |
 | `ping <ip>` | Tests basic connectivity to another device |
 
 ## PC configuration
